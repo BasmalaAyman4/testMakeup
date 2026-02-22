@@ -1,0 +1,180 @@
+.trend__sec {
+    position: relative;
+    padding: 75px 25px;
+}
+
+
+.trend__body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trend__body h2 {
+    font-size: 40px;
+    color: var(--Primary);
+      font-family: "Condiment", cursive;
+margin-bottom: 10px;
+position: relative;
+    }
+ 
+.trend__body p{
+        font-family: "Condiment", cursive;
+        font-size: 17px;
+        color: #666;
+}
+.active {
+    width: 150px;
+        background-color: rgb(232 48 79 / 0.1);
+        border:transparent;
+   color: rgb(232 48 79 / 1);
+    border-radius:25px ;
+    -webkit-border-radius:25px ;
+    -moz-border-radius:25px ;
+    -ms-border-radius:25px ;
+    -o-border-radius:25px ;
+    padding: 8px 0;
+    margin: 7px;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000),
+      var(--tw-shadow);
+}
+
+.option {
+
+    background-color: transparent;
+    border: none !important;
+    width: 150px;
+}
+
+.active,
+.option {
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.trend__options {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    margin: 30px 0;
+    border: 1px solid rgb(226 232 240 / 1);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background-color: rgb(241 245 249 / 1);
+}
+
+
+
+.activeIndicator {
+    border-radius: inherit;
+}
+.cards__body{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 20px;
+
+}
+/* Add to trending.module.css after line 66 */
+
+@media (max-width: 1400px) {
+    .cards__body {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .cards__body {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    
+    .trend__body h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .cards__body {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    
+    .trend__sec {
+      padding: 60px 20px;
+    }
+    
+    .trend__body h2 {
+      font-size: 30px;
+    }
+    
+    .trend__options {
+      column-gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .active,
+    .option {
+      width: 140px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cards__body {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    
+    .trend__sec {
+      padding: 50px 16px;
+    }
+    
+    .trend__body h2 {
+      font-size: 26px;
+    }
+    
+    .trend__options {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+    
+    .active,
+    .option {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .cards__body {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 0 16px;
+    }
+    
+    .trend__body h2 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trend__sec {
+      padding: 40px 12px;
+    }
+    
+    .trend__body h2 {
+      font-size: 22px;
+    }
+  }

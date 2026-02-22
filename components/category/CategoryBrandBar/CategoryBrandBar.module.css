@@ -1,0 +1,123 @@
+.wrapper {
+  --category-primary: #e8305e;
+  --category-primary-rgb: 232, 48, 94;
+  position: sticky;
+  top: 73px;
+  z-index: 40;
+  margin-left: calc(-1 * var(--container-padding, 20px));
+  margin-right: calc(-1 * var(--container-padding, 20px));
+  margin-bottom: 2rem;
+  padding-left: var(--container-padding, 20px);
+  padding-right: var(--container-padding, 20px);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.inner::-webkit-scrollbar {
+  display: none;
+}
+
+.brandItem {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.brandItem:hover {
+  opacity: 0.9;
+}
+
+.brandCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f1f5f9;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.brandItem.allBrands .brandCircle {
+  border-color: var(--category-primary);
+  background: rgba(var(--category-primary-rgb), 0.1);
+  color: var(--category-primary);
+}
+
+.brandItem:not(.allBrands) .brandCircle:hover {
+  border-color: #cbd5e1;
+}
+
+.brandItem.selected .brandCircle {
+  border-color: var(--category-primary);
+  background: rgba(var(--category-primary-rgb), 0.08);
+}
+
+.brandItem.allBrands.selected .brandCircle {
+  background: rgba(var(--category-primary-rgb), 0.12);
+}
+
+.gridIcon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.brandImage {
+  object-fit: contain;
+}
+
+.brandInitial {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.brandLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  text-align: center;
+
+}
+
+.brandItem.allBrands .brandLabel,
+.brandItem.selected .brandLabel {
+  color: var(--category-primary);
+  font-weight: 700;
+}
+
+.brandItem:not(.allBrands):not(.selected) .brandLabel:hover {
+  color: var(--text-screen, #2D3142);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    top: 60px;
+  }
+}

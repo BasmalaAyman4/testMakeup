@@ -1,0 +1,56 @@
+/* components/category/ProductGrid/ProductGridSkeleton.module.css */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 50%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.skeletonImage {
+  min-height: 280px;
+  border-radius: 12px;
+}
+
+.skeletonTitle {
+  width: 85%;
+  height: 16px;
+  margin-bottom: 0.5rem;
+}
+
+.skeletonPrice {
+  width: 80px;
+  height: 20px;
+}
+
+.skeletonButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #2a2a2a 0%,
+      #3a3a3a 50%,
+      #2a2a2a 100%
+    );
+  }
+}

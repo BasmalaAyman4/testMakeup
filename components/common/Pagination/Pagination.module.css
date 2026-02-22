@@ -1,0 +1,157 @@
+/* components/ui/Pagination/Pagination.module.css */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: white;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(.disabled) {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.navButton:disabled,
+.navButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .navText {
+    display: inline;
+  }
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pageButton {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.pageButton.active {
+  background: #e8305e;
+  color: white;
+  border-color: #e8305e;
+}
+
+.pageButton.active:hover {
+  background: #d42a54;
+  border-color: #d42a54;
+}
+
+/* Circular variant for category/shop pages */
+.pagination.circular .navButton {
+  min-width: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 9999px;
+  justify-content: center;
+}
+
+.pagination.circular .navButton:hover:not(.disabled) {
+  background: #e8305e;
+  color: #fff;
+  border-color: #e8305e;
+}
+
+.pagination.circular .pageButton {
+  min-width: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination.circular .pageButton:hover {
+  background: #f1f5f9;
+}
+
+.pagination.circular .pageButton.active {
+  background: #e8305e;
+  color: #fff;
+}
+
+.pagination.circular {
+  margin-top: 4rem;
+}
+
+.ellipsis {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .pagination {
+    gap: 0.25rem;
+  }
+
+  .navButton {
+    padding: 0.5rem;
+    min-width: 2.5rem;
+    justify-content: center;
+  }
+
+  .pageButton {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  .ellipsis {
+    min-width: 2rem;
+    height: 2rem;
+  }
+}

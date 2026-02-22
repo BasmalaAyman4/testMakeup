@@ -1,0 +1,289 @@
+/* BrandCarousel.module.css */
+
+.section {
+  padding: 80px 16px;
+  position: relative;
+  background-color: #ffffff;
+}
+.categorySpecial {
+  position: absolute;
+  left: 10px;
+  font-weight: 400;
+  text-align: left;
+  font-size: 200px;
+  color: #F5E0D2;
+  transform: rotate(-8deg);
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  top: 55px;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #fb7185;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1.125rem;
+  font-family: cursive;
+}
+
+.carouselWrapper {
+  position: relative;
+}
+
+.navButton {
+  position: absolute;
+  top: 30%;
+  z-index: 20;
+  background-color: var(--on-secondary) ;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+}
+
+.navButton:hover {
+  background-color: #f9fafb;
+}
+
+.navButtonLeft {
+  left: -50px;
+}
+
+.navButtonRight {
+  right: -50px;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+.navButton:hover .navIcon{
+    color: #fb7185;
+}
+.brandsContainer {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 64px;
+}
+
+.brandItem {
+  cursor: pointer;
+
+}
+
+.brandCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 150px;
+  width: 250px;
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandCard:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #fbb6ce;
+}
+
+.brandImageContainer {
+
+  padding: 20px;
+}
+
+.brandImage {
+ width: 100%;
+ height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brandCard:hover .brandImage {
+  transform: scale(1.1);
+}
+
+/* Replace/update the existing responsive section (lines 134-185) with: */
+
+@media (max-width: 1400px) {
+  .brandsContainer {
+    gap: 28px;
+    padding: 0 56px;
+  }
+  
+  .brandCard {
+    height: 140px;
+    width: 230px;
+  }
+  
+  .categorySpecial {
+    font-size: 180px;
+    top: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .brandsContainer {
+    gap: 24px;
+    padding: 0 48px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .brandCard {
+    height: 130px;
+    width: 210px;
+  }
+  
+  .categorySpecial {
+    font-size: 160px;
+    top: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .brandsContainer {
+    gap: 20px;
+    padding: 0 40px;
+  }
+  
+  .brandCard {
+    height: 120px;
+    width: 190px;
+  }
+  
+  .section {
+    padding: 60px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandsContainer {
+    gap: 16px;
+    padding: 0 32px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .brandsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .brandItem {
+    flex-shrink: 0;
+  }
+  
+  .brandCard {
+    height: 110px;
+    width: 170px;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .navButton {
+    padding: 8px;
+    display: none; /* Hide arrows on mobile */
+  }
+  
+  .navIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .categorySpecial {
+    font-size: 120px;
+    top: 80px;
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 640px) {
+  .brandsContainer {
+    gap: 12px;
+    padding: 0 16px;
+  }
+  
+  .brandCard {
+    height: 100px;
+    width: 150px;
+  }
+  
+  .section {
+    padding: 50px 12px;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .categorySpecial {
+    font-size: 100px;
+    top: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandCard {
+    height: 90px;
+    width: 130px;
+  }
+  
+  .brandImageContainer {
+    padding: 12px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .categorySpecial {
+    display: none; /* Hide on very small screens */
+  }
+}

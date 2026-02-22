@@ -1,0 +1,51 @@
+/* components/category/FilterSidebar/FilterSidebarSkeleton.module.css */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 50%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  border-radius: 0.375rem;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeletonTitle {
+  height: 28px;
+  width: 120px;
+}
+
+.skeletonFilterTitle {
+  height: 20px;
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+.skeletonText {
+  height: 16px;
+  width: 120px;
+  flex: 1;
+}
+
+.skeletonIcon {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+
+.skeletonImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.375rem;
+}

@@ -1,0 +1,254 @@
+/* components/category/FilterSidebar/FilterSidebar.module.css */
+
+.sidebar {
+  width: 100%;
+  max-width: 280px;
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  will-change: contents;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.loadingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  display: block;
+}
+
+.filterGroup {
+  margin-bottom: 2rem;
+}
+
+.filterTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem 0;
+}
+
+.productTypeList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.productTypeItem {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s ease;
+  /* Hardware acceleration */
+  transform: translateZ(0);
+}
+
+.productTypeItem:hover {
+  border-color: #d1d5db;
+}
+
+.productTypeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  cursor: pointer;
+  background: white;
+  user-select: none;
+  /* Remove default transition since Framer Motion handles it */
+  transition: border-color 0.2s ease;
+}
+
+.productTypeHeader.selected {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.productTypeInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.filterImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filterName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.productTypeHeader.selected .filterName {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.expandIcon {
+  flex-shrink: 0;
+  color: #9ca3af;
+  /* Framer Motion handles rotation */
+}
+
+/* Brands List - Framer Motion handles animations */
+.brandsList {
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border: none;
+  background: white;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+  position: relative;
+  user-select: none;
+  text-align: left;
+  width: 100%;
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.brandItem:last-child {
+  margin-bottom: 0;
+}
+
+.brandItem.activeBrand {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+}
+
+.brandImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandName {
+  font-size: 0.8125rem;
+  color: #4b5563;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brandItem.activeBrand .brandName {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .productTypeItem,
+  .brandItem {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    max-width: 100%;
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+
+  .productTypeHeader {
+    padding: 0.625rem;
+  }
+
+  .filterImage {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brandImage {
+    width: 28px;
+    height: 28px;
+  }
+
+  .filterName {
+    font-size: 0.8125rem;
+  }
+
+  .brandName {
+    font-size: 0.75rem;
+  }
+}
