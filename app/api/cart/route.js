@@ -175,16 +175,18 @@ export async function POST(request) {
   }
 } */
 
-  // app/api/cart/route.js
+// app/api/cart/route.js
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { getApiLangCode } from '@/utils/locale';
 
-const API_URL = process.env.API_URL;
-
-if (!API_URL) {
-  console.error('❌ API_URL is missing from environment variables');
-  throw new Error('API_URL is required');
+function getApiUrl() {
+  const url = process.env.API_URL;
+  if (!url) {
+    console.error('❌ API_URL is missing from environment variables');
+    throw new Error('API_URL is required');
+  }
+  return url;
 }
 
 /**
@@ -192,7 +194,7 @@ if (!API_URL) {
  */
 async function getFreshSession() {
   const session = await auth();
-  
+
   if (!session?.accessToken) {
     return null;
   }
@@ -214,14 +216,14 @@ async function getFreshSession() {
  */
 async function parseResponse(response) {
   const contentType = response.headers.get('content-type');
-  
+
   try {
     if (contentType?.includes('application/json')) {
       return await response.json();
     }
-    
+
     const text = await response.text();
-    
+
     // Try to parse as JSON
     try {
       return JSON.parse(text);
@@ -300,6 +302,7 @@ export async function POST(request) {
       'webOrMob': '2'
     };
 
+    const API_URL = getApiUrl();
     console.log('🚀 Calling backend API:', `${API_URL}/api/Cart`);
 
     // Call backend API with timeout
@@ -434,6 +437,7 @@ export async function GET(request) {
       'webOrMob': '2'
     };
 
+    const API_URL = getApiUrl();
     const response = await fetch(`${API_URL}/api/Cart`, {
       method: 'GET',
       headers,

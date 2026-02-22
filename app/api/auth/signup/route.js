@@ -5,10 +5,10 @@ import { validateMobile } from '@/utils/validations';
 import { getErrorMessage, TIME_CONSTANTS } from '@/utils/constants';
 import { getLocaleFromLangCode } from '@/utils/locale';
 
-const API_URL = process.env.API_URL || process.env.NEXT_PUBLIC_API_URL;
-
-if (!API_URL) {
-    throw new Error('API_URL is required in environment variables');
+function getApiUrl() {
+    const url = process.env.API_URL || process.env.NEXT_PUBLIC_API_URL;
+    if (!url) throw new Error('API_URL is required in environment variables');
+    return url;
 }
 
 export async function POST(request) {
@@ -73,6 +73,7 @@ export async function POST(request) {
 
         let response;
         try {
+            const API_URL = getApiUrl();
             response = await fetch(`${API_URL}/api/Auth/SignUp`, {
                 method: 'POST',
                 headers: {

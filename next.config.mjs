@@ -38,9 +38,6 @@ export default nextConfig; */
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true,
-  },
   images: {
     domains: ['api.lajolie-eg.com'], // Your API domain for images
   },
@@ -50,24 +47,24 @@ const nextConfig = {
         // Apply to all routes
         source: '/:path*',
         headers: [
-         /*   {
-            key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              "connect-src 'self' https://api.lajolie-eg.com https://cdn.jsdelivr.net",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net",
-              "script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
-              "worker-src 'self' blob:",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com data:",
-              "img-src 'self' data: blob: https:",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-              "frame-ancestors 'none'",
-              "upgrade-insecure-requests"
-            ].join('; ')
-          }, */ 
+          /*   {
+             key: 'Content-Security-Policy',
+             value: [
+               "default-src 'self'",
+               "connect-src 'self' https://api.lajolie-eg.com https://cdn.jsdelivr.net",
+               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net",
+               "script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
+               "worker-src 'self' blob:",
+               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+               "font-src 'self' https://fonts.gstatic.com data:",
+               "img-src 'self' data: blob: https:",
+               "object-src 'none'",
+               "base-uri 'self'",
+               "form-action 'self'",
+               "frame-ancestors 'none'",
+               "upgrade-insecure-requests"
+             ].join('; ')
+           }, */
           {
             key: 'Content-Security-Policy',
             value: [
